@@ -34,6 +34,15 @@ public class Reservation {
     @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
 
+    private String score;
+	public String getScore() {
+		return score;
+	}
+
+	public void setScore(String score) {
+		this.score = score;
+	}
+
 	public Integer getIdReservation() {
 		return idReservation;
 	}
