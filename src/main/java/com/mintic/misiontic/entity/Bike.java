@@ -1,11 +1,15 @@
 package com.mintic.misiontic.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -29,6 +33,13 @@ public class Bike {
     @JsonIgnoreProperties("bikes")
 	private Category category;
 
+	@OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "bike")
+    @JsonIgnoreProperties({"bike", "client"})
+    private List<Message> messages;
+
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "bike")
+    @JsonIgnoreProperties({"bike", "client"})
+    private List<Reservation> reservations;
 	
 	public Integer getId() {
 		return id;
