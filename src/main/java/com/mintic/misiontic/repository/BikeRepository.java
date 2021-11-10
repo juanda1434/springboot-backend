@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.mintic.misiontic.entity.Bike;
 import com.mintic.misiontic.repository.crud.IBikeCrudRepository;
+import org.springframework.stereotype.Repository;
+@Repository
 public class BikeRepository {
 	
 	@Autowired

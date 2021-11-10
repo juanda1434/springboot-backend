@@ -4,48 +4,48 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import com.mintic.misiontic.entity.Client;
-import com.mintic.misiontic.service.ClientService;
+import com.mintic.misiontic.entity.Bike;
+import com.mintic.misiontic.service.BikeService;
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/Client")
+@RequestMapping("/api/Bike")
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
-public class ClientController{
+public class BikeController{
+
 
     @Autowired
-    private ClientService service;
+    private BikeService service;
     @GetMapping("/all")
-    public List<Client> getClients(){
+    public List<Bike> getBikes(){
         return service.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Client> getClient(@PathVariable("id") int clientId) {
-        return service.getClient(clientId);
+    public Optional<Bike> getBike(@PathVariable("id") int bikeId) {
+        return service.getBike(bikeId);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Client save(@RequestBody Client client) {
-        return service.save(client);
+    public Bike save(@RequestBody Bike bike) {
+        return service.save(bike);
     }
 
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Client update(@RequestBody Client client) {
-        return service.update(client);
+    public Bike update(@RequestBody Bike bike) {
+        return service.update(bike);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public boolean delete(@PathVariable("id") int clientId) {
-        return service.deleteClient(clientId);
+    public boolean delete(@PathVariable("id") int bikeId) {
+        return service.deleteBike(bikeId);
     }
 
-	
 	
 	
 	

@@ -1,11 +1,14 @@
 package com.mintic.misiontic.repository;
 import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.mintic.misiontic.entity.Client;
 import com.mintic.misiontic.repository.crud.IClienteCrudRepository;
+import org.springframework.stereotype.Repository;
+@Repository
 public class ClienteRepository {
 	
 	@Autowired

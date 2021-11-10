@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.mintic.misiontic.entity.Category;
 import com.mintic.misiontic.repository.crud.ICategoryCrudRepository;
+import org.springframework.stereotype.Repository;
+@Repository
 public class CategoryRepository {
 	
 	@Autowired

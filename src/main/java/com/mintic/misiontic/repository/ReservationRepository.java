@@ -1,6 +1,5 @@
 package com.mintic.misiontic.repository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,6 +10,8 @@ import com.mintic.misiontic.entity.Client;
 import com.mintic.misiontic.entity.Reservation;
 import com.mintic.misiontic.model.ClientCount;
 import com.mintic.misiontic.repository.crud.IReservationCrudRepository;
+import org.springframework.stereotype.Repository;
+@Repository
 public class ReservationRepository {
 	
 	@Autowired
