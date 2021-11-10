@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "client")
+@Table(name = "message")
 public class Message {
 
 	@Id
@@ -25,7 +25,7 @@ public class Message {
     private Bike bike;
 
     @ManyToOne
-    @JoinColumn(name="clientId")
+    @JoinColumn(name="idClient")
     @JsonIgnoreProperties({"messages", "reservations", "client"})
     private Client client;
 

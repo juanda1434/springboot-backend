@@ -7,6 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.mintic.misiontic.entity.Reservation;
 
+
 public interface IReservationCrudRepository extends CrudRepository<Reservation, Integer> {
 
 	public List<Reservation> findAllByStatus (String status);
